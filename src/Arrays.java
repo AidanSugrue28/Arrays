@@ -20,6 +20,7 @@ public class Arrays {
         averageNum();
         maxNum();
         minNum();
+        maxIndex();
     }
 
     public void displayArrays(){
@@ -74,5 +75,18 @@ public class Arrays {
         }
 
         System.out.println("Smallest number in array: " + min);
+    }
+    public void maxIndex(){
+        int max = nums[0];
+        int index = 0;
+        for(int i = 1; i < nums.length; i++){
+       //     max = Math.max(max, nums[i]);
+
+            if(nums[i] > max){
+                index = i;
+                max = nums[i];
+            }
+        }
+        System.out.println("max at index:" + index);
     }
 }
