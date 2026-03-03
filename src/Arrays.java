@@ -21,6 +21,8 @@ public class Arrays {
         maxNum();
         minNum();
         maxIndex();
+        greaterThan50();
+
     }
 
     public void displayArrays(){
@@ -76,17 +78,27 @@ public class Arrays {
 
         System.out.println("Smallest number in array: " + min);
     }
-    public void maxIndex(){
+    public void maxIndex() {
         int max = nums[0];
         int index = 0;
-        for(int i = 1; i < nums.length; i++){
-       //     max = Math.max(max, nums[i]);
 
-            if(nums[i] > max){
-                index = i;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] > max) {
                 max = nums[i];
+                index = i;
             }
         }
-        System.out.println("max at index:" + index);
+
+        System.out.println("Max value is " + max + " at index: " + index);
+    }
+
+    public void greaterThan50() {
+        int count = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] >= 50) {
+                count++;
+            }
+        }
+        System.out.println("Numbers greater than or equal to 50: " + count);
     }
 }
