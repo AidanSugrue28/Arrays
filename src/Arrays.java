@@ -1,6 +1,7 @@
 public class Arrays {
 
     public int[] nums;
+    public Star[] stars;
 
     public static void main(String[] args){
         System.out.println("welcome to the awesome world of arrays");
@@ -9,6 +10,31 @@ public class Arrays {
 
     public Arrays() {
         nums = new int[10];
+        stars = new Star[7];
+
+        stars[0] = new Star();
+        Star s1 = new Star();
+        s1.printInfo();
+        stars[0].printInfo();
+
+        s1.color = "red";
+        s1.points = 7;
+        s1.printInfo();
+
+        stars[0].color = "blue";
+        stars[0].points = 9;
+        stars[0].printInfo();
+
+        for(int x = 0; x < stars.length; x++){
+            stars[x] = new Star();
+            stars[x].points =(int)(Math.random() * 11);
+        }
+
+        System.out.println("experiment " + stars[3].points);
+
+
+
+
         for (int y = 0; y < nums.length; y++){
             nums[y] = (int)(Math.random()*100)+1;
         }
@@ -22,6 +48,7 @@ public class Arrays {
         minNum();
         maxIndex();
         greaterThan50();
+        displayStars();
 
     }
 
@@ -100,5 +127,12 @@ public class Arrays {
             }
         }
         System.out.println("Numbers greater than or equal to 50: " + count);
+    }
+
+    public void displayStars(){
+        for (int y=0; y < stars.length; y++){
+            stars[y].printInfo();
+
+        }
     }
 }
